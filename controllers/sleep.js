@@ -23,12 +23,27 @@ sleepRouter.get("/", (req, res) => {
 
 
 
-// new
-sleepRouter.get("/new", (req, res) => {
-    res.render("sleep/new_sleep.ejs", {
+// new morning
+sleepRouter.get("/new_morning/", (req, res) => {
+    res.render("sleep/new_morning.ejs", {
         currentUser: req.session.currentUser,
     });
 });
+
+sleepRouter.get("/new_night/", (req, res) => {
+    res.render("sleep/new_night.ejs", {
+        currentUser: req.session.currentUser,
+    });
+});
+// new night
+// sleepRouter.get("/new_night", (req, res) => {
+//     res.render("sleep/new_night.ejs", {
+//         currentUser: req.session.currentUser,
+//     });
+// });
+
+
+
 //delete
 sleepRouter.delete("/:id", (req, res) => {
     User.findById(req.session.currentUser, (err, foundUser) => {

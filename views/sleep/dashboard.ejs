@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+      <h1>Your Sleep Journal</h1>
+      <h2> When you wake up</h2>
+      <div id="table-container">
+        <table class="striped">
+          <thead>
+            <tr>
+              <th>Logged Date</th>
+              <th>Time You Woke Up</th>
+              <th>How Many hours did you sleep</th>
+              <th>difficulty Falling Asleep</th>
+              <th>How many times did you wake up</th>
+              <th>How do you feel this morning</th>
+              <th>Quality of Sleep</th>
+              <th>What did you dream about</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for (var i = 0; i < sleep.length; i++) { %>
+            <tr>
+              <td><%= sleep[i].createdAt %></td>
+              <td><%= sleep[i].wokeupTime %></td>
+              <td><%= sleep[i].numberOfSleepHours %></td>
+              <td><%= sleep[i].difficultyFallingAsleep %></td>
+              <td><%= sleep[i].numOfTimesWokenup %></td>
+              <td><%= sleep[i].morningFeeling %></td>
+              <td><%= sleep[i].qualityOfSleep %></td>
+              <td><%= sleep[i].dreams %></td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+        <button><a href="/sleep/new_morning/">Log Your Sleep</a></button>
+      </div>
+      
+      <h2> When you go to bed</h2>
+      <div id="table-container">
+      <table class="striped">
+        <thead>
+          <tr>
+            <th>Logged Date</th>
+            <th>Time You Went to Bed</th>
+            <th>Did you take a nap today:</th>
+            <th>Number of caffinated drinks:</th>
+            <th>How Many Minutes did you excercise today:</th>
+            <th>I felt drowsy today</th>
+            <th>What was your overall mood today</th>
+            <th>What did you do one hour before bed</th>
+            <th>I took medication today</th>
+            <th>How High was my stress level today</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (var i = 0; i < sleep.length; i++) { %>
+          <tr>
+            <td><%= sleep[i].createdAt %></td>
+            <td><%= sleep[i].asleepTime %></td>
+            <td><%= sleep[i].nap %></td>
+            <td><%= sleep[i].numberOCaffeineDrinks %></td>
+            <td><%= sleep[i].numberOfMinutesOfExercise %></td>
+            <td><%= sleep[i].drowsey %></td>
+            <td><%= sleep[i].overallMoodToday %></td>
+            <td><%= sleep[i].oneHourBeforeBed %></td>
+            <td><%= sleep[i].medication %></td>
+            <td><%= sleep[i].stressLevel %></td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table> 
+      <button><a href="/sleep/new_night/">Enter Your Day</a></button>
+    </div>
+      
+  </body>
+    
+</html>

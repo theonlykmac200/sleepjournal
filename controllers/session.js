@@ -8,7 +8,7 @@ const sessionRouter = express.Router();
 
 
 sessionRouter.get("/new", (req, res) => {
-    res.render("sessions/new.ejs", {
+    res.render("sessions/session_new_user.ejs", {
         currentUser: req.session.currentUser,
     });
 });
@@ -29,7 +29,7 @@ sessionRouter.post("/", (req, res) => {
         } else {
             if (bcrypt.compareSync(req.body.password, foundUser.password)) {
                 req.session.currentUser = foundUser;
-                res.redirect("/sleep");
+                res.redirect("/sleep/");
             } else {
                 res.send("password does not match, go back and try again");
             }

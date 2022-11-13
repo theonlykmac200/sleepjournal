@@ -13,8 +13,16 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
-       <h1>hero page
-        
-       </h1>
+       <h1>Login</h1>
+       <div class="row">
+        <form action="/session" method="POST">
+         <label for="username"><span class="bolded">Username:</span></label>
+          <input type="text" name="username" id="username" /></br>
+          <label for="password"><span class="bolded">Password:</span></label>
+          <input type="password" name="password" id="password"/></br>
+          <input class ="waves-effect amber waves-light btn" type="submit" value="Login" />
+        </form>
+        <button class ="waves-effect amber waves-light btn"><a href="/user/new">Sign Up</a></button>
+      </div>
     </body>
 </html>
