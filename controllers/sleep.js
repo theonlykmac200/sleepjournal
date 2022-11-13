@@ -100,7 +100,7 @@ sleepRouter.post("/", (req, res) => {
 //edit
 sleepRouter.get("/:id/edit", (req, res) => {
     Sleep.findById(req.params.id, (err, foundSleep) => {
-        res.render("sleep/edit_workout.ejs", {
+        res.render("sleep/edit.ejs", {
             currentUser: req.session.currentUser,
             sleep: foundSleep,
         });

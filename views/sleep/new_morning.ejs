@@ -14,26 +14,23 @@
     </head>
     <body>
        <h1> Enter When You Wake Up</h1>
-       <div class="row">
-        <form action="/sleep" method="POST">
-            <label for="numOfTimesWokenup"><span class="bolded">Time You Woke Up:</span></label>
-            <input type="text" name="numOfTimesWokenup" id="numOfTimesWokenup" /></br>
-            <label for="numberOfSleepHours"><span class="bolded">Number of Sleep Hours:</span></label>
-            <input type="text" name="numberOfSleepHours" id="numberOfSleepHours"/></br>
-            <label for="difficultyFallingAsleep"><span class="bolded">Difficulty Falling Asleep:</span></label>
-            <input type="text" name="difficultyFallingAsleep" id="difficultyFallingAsleep"/></br>
-            <label for="numOfTimesWokenup" name="numOfTimesWokenup"><span class="bolded">Number of Times Woken Up:</span></label>
-            <input type="text" name="numOfTimesWokenup" id="numOfTimesWokenup"/></br>
-            <label for="morningFeeling "><span class="bolded">Morning Feeling:</span></label>
-            <input type="text" name="morningFeeling" id="morningFeeling"/></br>
-            <label for="sleepQuality"><span class="bolded">Sleep Quality:</span></label>
-            <input type="text" name="sleepQuality" id="sleepQuality"/></br>
-            <label for="dreams"><span class="bolded">Sleep Notes:</span></label>
-            <textarea" name="dreams" id="dreams"/>What Dreams Did You Have?</br>
-
-
-
-          <input class ="waves-effect amber waves-light btn" type="submit" value="Submit" />
-        </form>
+       <div class="new-sleep-morning-container">
+        <div class="row">
+            <form action="/sleep" method="POST">
+                <div class="input-field">
+                    <span class="bolded">What time did you woke up?</span><input type="text" name="wokeupTime"/></br>
+                    <span class="bolded">How long did you sleep?</span><input type="text" name="numberOfSleepHours"/></br>
+                    <span class="bolded">How Difficult was is to fall asleep?</span><input type="text" name="difficultyFallingAsleep"/></br>
+                    <span class="bolded">On a scale of 1-5, what was the quality of your sleep?</span><input type="text" name="qualityOfSleep" /></br>
+                    <span class="bolded">How are you feeling?</span><input type="text" name="morningFeeling" /></br>
+                    <span class="bolded">How many times did you wake up</span><input type="text" name="numOfTimesWokenup"/></br>
+                    <span class="bolded">What did you dream about:</span><textarea name="dreams"></textarea><br />
+                
+                <input class="waves-effect amber waves-light btn" type="submit" name="" value="Add Workout"/>
+            </form>  
+                <button class="waves-effect amber waves-light btn"><a href="/sleep">Go Home</a></button>
+                <form class="waves-effect amber waves-light btn" action="/sessions?_method=DELETE" method="POST">
+                    <input type="submit" value="Log Out" />
+                </form>
     </body>
 </html>

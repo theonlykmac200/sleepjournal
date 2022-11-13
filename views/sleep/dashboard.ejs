@@ -32,7 +32,7 @@
           <tbody>
             <% for (var i = 0; i < sleep.length; i++) { %>
             <tr>
-              <td><%= sleep[i].createdAt %></td>
+              <td><%=sleep[i].createdAt.toString().slice(4,15)%></td>
               <td><%= sleep[i].wokeupTime %></td>
               <td><%= sleep[i].numberOfSleepHours %></td>
               <td><%= sleep[i].difficultyFallingAsleep %></td>
@@ -67,7 +67,7 @@
         <tbody>
           <% for (var i = 0; i < sleep.length; i++) { %>
           <tr>
-            <td><%= sleep[i].createdAt %></td>
+            <td><%=sleep[i].createdAt.toString().slice(4,15)%></td>
             <td><%= sleep[i].asleepTime %></td>
             <td><%= sleep[i].nap %></td>
             <td><%= sleep[i].numberOCaffeineDrinks %></td>
