@@ -10,8 +10,8 @@ const sleepSchema = new mongoose.Schema({
    dreams: { type: String, required: false },
    asleepTime: { type: String, required: false },
    nap: { type: Boolean, required: false },
-   numberOCaffeineDrinks: { type: Number, required: false },
-   numberOfMinutesOfExercise: { type: Number, required: false },
+   numberOCaffeineDrinks: { type: String, required: false },
+   numberOfMinutesOfExercise: { type: String, required: false },
    drowsey: { type: Boolean, required: false },
    overallMoodToday: { type: String, required: false },
    oneHourBeforeBed: { type: String, required: false },
@@ -22,6 +22,6 @@ const sleepSchema = new mongoose.Schema({
    timestamps: true
 });
 
-const Sleep = mongoose.model("tenndr", sleepSchema)
+const Sleep = mongoose.model("sleep", sleepSchema)
 
 module.exports= Sleep

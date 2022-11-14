@@ -14,7 +14,41 @@
     </head>
     <body>
        <h1>edit page
-        
+        <form action="/sleep/<%=sleep._id%>?_method=PUT" method="POST">
+            <label for="wokeupTime">Time You Woke Up</label>
+            <input type="text" name="wokeupTime" value="<%= sleep.wokeupTime %>"/>
+            <label for="numberOfSleepHours">How Many hours did you sleep</label>
+            <input type="text" name="numberOfSleepHours" value="<%= sleep.numberOfSleepHours %>"/>
+            <label for="difficultyFallingAsleep">difficulty Falling Asleep</label>
+            <input type="text" name="difficultyFallingAsleep" value="<%= sleep.difficultyFallingAsleep %>"/>
+            <label for="numOfTimesWokenup">How many times did you wake up</label>
+            <input type="text" name="numOfTimesWokenup" value="<%= sleep.numOfTimesWokenup %>"/>
+            <label for="morningFeeling">How do you feel this morning</label>
+            <input type="text" name="morningFeeling" value="<%= sleep.morningFeeling %>"/>
+            <label for="qualityOfSleep">How would you rate your sleep quality</label>
+            <input type="text" name="qualityOfSleep" value="<%= sleep.qualityOfSleep%>"/>
+            <label for="asleepTime">Time you fell asleep</label>
+            <input type="text" name="asleepTime" value="<%= sleep.asleepTime %>"/>
+            <label for="nap">Did you take a nap</label>
+            <input type="text" name="nap" value="<%= sleep.nap %>"/>
+            <label for="numberOCaffeineDrinks">How many caffeinated drinks did you have</label>
+            <input type="text" name="numberOCaffeineDrinks" value="<%= sleep.numberOCaffeineDrinks%>"/>
+            <label for="numberOfMinutesOfExercise">How many minutes did you exercise</label>
+            <input type="text" name="numberOfMinutesOfExercise" value="<%= sleep.numberOfMinutesOfExercise %>"/>
+            <label for="drowsey">Were you drowsey</label>
+            <input type="boolean" name="drowsey" value="<%= sleep.drowsey %>"/>
+            <label for="overallMoodToday">How is your overall mood today</label>
+            <input type="text" name="overallMoodToday" value="<%= sleep.overallMoodToday %>"/>
+            <label for="medication">Did you take any medication</label>
+            <input type="boolean" name="medication" value="<%= sleep.medication %>"/>
+            <label for="oneHourBeforeBed">What did you do one hour before bed</label>
+            <input type="text" name="oneHourBeforeBed" value="<%= sleep.oneHourBeforeBed %>"/>
+            <label for="stressLevel">How stressed are you</label>
+            <input type="text" name="stressLevel" value="<%= sleep.stressLevel %>"/>
+            <label for="dreams">dreams</label>
+            <textarea name="dreams" ><%= sleep.dreams %>"</textarea>
+            <input type="submit" name="" value="Update" />
+        </form>
        </h1>
     </body>
 </html>

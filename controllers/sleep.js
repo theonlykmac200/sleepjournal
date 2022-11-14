@@ -58,17 +58,18 @@ sleepRouter.delete("/:id", (req, res) => {
 //update
 sleepRouter.put("/:id", (req, res) => {
     //find this workout and update it
-   Sleep.findByIdAndUpdate(
+    Sleep.findByIdAndUpdate(
         req.params.id,
         req.body,
         { new: true },
         (err, updatedSleep) => {
+            
             //find this user and push the updated workout into their workouts array
     User.findOne({ "sleeps._id": req.params.id }, (err, foundUser) => {
         foundUser.sleeps.id(req.params.id).remove();
         foundUser.sleeps.push(updatedSleep);
         foundUser.save((err, data) => {
-            res.redirect("/sleep");
+            res.redirect("/sleep/");
         });
     }
     );
@@ -107,6 +108,15 @@ sleepRouter.get("/:id/edit", (req, res) => {
         })
     });
 
+sleepRouter.get("/new_night/:id/edit", (req, res) => {
+    Sleep.findById(req.params.id, (err, foundSleep) => {
+        res.render("sleep/new_night.ejs", {
+            currentUser: req.session.currentUser,
+            sleep: foundSleep,
+        });
+        })
+    });
+    
 
 //show  // I feel like tenndr and user are flipped here but I figure out what it should be and its just throwing the same error either way that still works so no point in changing it. 
 sleepRouter.get("/:id", (req, res) => {

@@ -40,6 +40,8 @@
               <td><%= sleep[i].morningFeeling %></td>
               <td><%= sleep[i].qualityOfSleep %></td>
               <td><%= sleep[i].dreams %></td>
+              <button><a href="/sleep/new_night/<%=sleep[i]._id%>/edit">Update before bed</a></button>
+              <button><a href="/sleep/<%=sleep[i]._id%>/edit">Edit</a></button>
             </tr>
             <% } %>
           </tbody>
@@ -67,7 +69,7 @@
         <tbody>
           <% for (var i = 0; i < sleep.length; i++) { %>
           <tr>
-            <td><%=sleep[i].createdAt.toString().slice(4,15)%></td>
+            <td><%=sleep[i].updatedAt.toString().slice(4,15)%></td>
             <td><%= sleep[i].asleepTime %></td>
             <td><%= sleep[i].nap %></td>
             <td><%= sleep[i].numberOCaffeineDrinks %></td>
@@ -81,7 +83,6 @@
           <% } %>
         </tbody>
       </table> 
-      <button><a href="/sleep/new_night/">Enter Your Day</a></button>
     </div>
       
   </body>
