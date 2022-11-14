@@ -42,6 +42,7 @@
               <td><%= sleep[i].dreams %></td>
               <button><a href="/sleep/new_night/<%=sleep[i]._id%>/edit">Update before bed</a></button>
               <button><a href="/sleep/<%=sleep[i]._id%>/edit">Edit</a></button>
+              <button><a href="/sleep/<%=sleep[i]._id%>/">View</a></button>
             </tr>
             <% } %>
           </tbody>
@@ -70,15 +71,15 @@
           <% for (var i = 0; i < sleep.length; i++) { %>
           <tr>
             <td><%=sleep[i].updatedAt.toString().slice(4,15)%></td>
-            <td><%= sleep[i].asleepTime %></td>
-            <td><%= sleep[i].nap %></td>
-            <td><%= sleep[i].numberOCaffeineDrinks %></td>
-            <td><%= sleep[i].numberOfMinutesOfExercise %></td>
-            <td><%= sleep[i].drowsey %></td>
-            <td><%= sleep[i].overallMoodToday %></td>
-            <td><%= sleep[i].oneHourBeforeBed %></td>
-            <td><%= sleep[i].medication %></td>
-            <td><%= sleep[i].stressLevel %></td>
+            <td><%= sleep[i].asleepTime%></td>
+            <td><%= sleep[i].nap%></td>
+            <td><%= sleep[i].numberOCaffeineDrinks%></td>
+            <td><%= sleep[i].numberOfMinutesOfExercise%></td>
+            <td><%= sleep[i].drowsey%></td>
+            <td><%= sleep[i].overallMoodToday%></td>
+            <td><%= sleep[i].oneHourBeforeBed%></td>
+            <td><%= sleep[i].medication%></td>
+            <td><%= sleep[i].stressLevel%></td>
           </tr>
           <% } %>
         </tbody>
