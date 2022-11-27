@@ -10,7 +10,15 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="./style.css">
+        <style>
+          body {
+            background-color: rgb(246, 216, 246);
+          }
+          .striped, thead, tbody, th, td {
+            border: 1px solid black;
+          }
+        </style>
     </head>
     <body>
       <h1>Your Sleep Journal</h1>
@@ -27,6 +35,7 @@
               <th>How do you feel this morning</th>
               <th>Quality of Sleep</th>
               <th>What did you dream about</th>
+              <th>actions</th>
             </tr>
           </thead>
           <tbody>
@@ -40,9 +49,12 @@
               <td><%= sleep[i].morningFeeling %></td>
               <td><%= sleep[i].qualityOfSleep %></td>
               <td><%= sleep[i].dreams %></td>
-              <button><a href="/sleep/new_night/<%=sleep[i]._id%>/edit">Update before bed</a></button>
-              <button><a href="/sleep/<%=sleep[i]._id%>/edit">Edit</a></button>
-              <button><a href="/sleep/<%=sleep[i]._id%>/">View</a></button>
+              <td>
+                <button><a href="/sleep/new_night/<%=sleep[i]._id%>/edit">Update before bed</a></button>
+                <button><a href="/sleep/<%=sleep[i]._id%>/edit">Edit</a></button>
+                <button><a href="/sleep/<%=sleep[i]._id%>/">View</a></button>
+              </td>
+              
             </tr>
             <% } %>
           </tbody>
