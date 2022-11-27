@@ -12,34 +12,42 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./style.css">
         <style>
-            body {
-              background-color: rgb(246, 216, 246);
-            }
-          </style>
+          body {
+            background-color: rgb(246, 216, 246);
+              margin: 50px 100px;
+          }
+          .input-field {
+              display: flex;
+              flex-direction: column;
+          }
+        </style>
     </head>
     <body>
        <h1> Enter Before Bed</h1>
-       <form action="/sleep/<%=sleep._id%>?_method=PUT" method="POST">
-        <label for="asleepTime">What time are you going to bed:</label>
-        <input type="text" name="asleepTime" value="<%=sleep.asleepTime%>" />
-        <label for="nap">Did you nap today:</label>
-        <input type="text" name="nap" value="<%=sleep.nap%>" />
-        <label for="numberOCaffeineDrinks">How Many Caffinated Beverages did you drink today?:</label>
-        <input type="text" name="numberOCaffeineDrinks" value="<%=sleep.numberOCaffeineDrinks%>" />
-        <label for="numberOfMinutesOfExercise">How Many Minutes did you excercise:</label>
-        <input type="text" name="numberOfMinutesOfExercise" value="<%=sleep.numberOfMinutesOfExercise%>" />
-        <label for="drowsey">Where you drowsy today?:</label>
-        <input type="Boolean" name="drowsey" value="<%=sleep.drowsey%>" />
-        <label for="overallMoodToday">What was your overall mood today?:</label>
-        <input type="text" name="overallMoodToday" value="<%=sleep.overallMoodToday%>" />
-        <label for="oneHourBeforeBed">What did you do one hour before bed?</label>
-        <input type="text" name="oneHourBeforeBed" value="<%=sleep.oneHourBeforeBed%>" />
-        <label for="medication">Did you take any medication today?</label>
-        <input type="Boolean" name="medication" value="<%=sleep.medication%>" />
-        <label for="stressLevel">What is your level of stress?</label>
-        <input type="string" name="stressLevel" value="<%=sleep.stressLevel%>" />
-        <input type="submit" name="" value="Update" />
-    </form>
+       <div class="input-field">
+        <form action="/sleep/<%=sleep._id%>?_method=PUT" method="POST">
+          <label for="asleepTime">What time are you going to bed:</label></br>
+          <input type="text" name="asleepTime" value="<%=sleep.asleepTime%>" /></br>
+          <label for="nap">Did you nap today:</label></br>
+          <input type="text" name="nap" value="<%=sleep.nap%>" /></br>
+          <label for="numberOCaffeineDrinks">How Many Caffinated Beverages did you drink today?:</label></br>
+          <input type="text" name="numberOCaffeineDrinks" value="<%=sleep.numberOCaffeineDrinks%>" /></br>
+          <label for="numberOfMinutesOfExercise">How Many Minutes did you excercise:</label></br>
+          <input type="text" name="numberOfMinutesOfExercise" value="<%=sleep.numberOfMinutesOfExercise%>" /></br>
+          <label for="drowsey">Where you drowsy today?:</label></br>
+          <input type="Boolean" name="drowsey" value="<%=sleep.drowsey%>" /></br>
+          <label for="overallMoodToday">What was your overall mood today?:</label></br>
+          <input type="text" name="overallMoodToday" value="<%=sleep.overallMoodToday%>" /></br>
+          <label for="oneHourBeforeBed">What did you do one hour before bed?</label></br>
+          <input type="text" name="oneHourBeforeBed" value="<%=sleep.oneHourBeforeBed%>" /></br>
+          <label for="medication">Did you take any medication today?</label></br>
+          <input type="Boolean" name="medication" value="<%=sleep.medication%>" /></br>
+          <label for="stressLevel">What is your level of stress?</label></br>
+          <input type="string" name="stressLevel" value="<%=sleep.stressLevel%>" /></br>
+          <input type="submit" name="" value="Update" />
+        </form>
+      </div>
+      <button ><a href="/sleep">Go Home</a></button>
     </body>
 </html>
 

@@ -12,14 +12,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./style.css">
         <style>
-            body {
-              background-color: rgb(246, 216, 246);
-            }
-          </style>
+          body {
+            background-color: rgb(246, 216, 246);
+              margin: 50px 100px;
+          }
+          .input-field {
+              display: flex;
+              flex-direction: column;
+          }
+        </style>
     </head>
     <body>
-       <h1>edit page
-        <form action="/sleep/<%=sleep._id%>?_method=PUT" method="POST">
+       <h1>edit page</h1>
+        <form class="input-field" action="/sleep/<%=sleep._id%>?_method=PUT" method="POST">
             <label for="wokeupTime">Time You Woke Up</label>
             <input type="text" name="wokeupTime" value="<%= sleep.wokeupTime %>"/>
             <label for="numberOfSleepHours">How Many hours did you sleep</label>
@@ -54,6 +59,6 @@
             <textarea name="dreams" ><%= sleep.dreams %>"</textarea>
             <input type="submit" name="" value="Update" />
         </form>
-       </h1>
+        <button ><a href="/sleep">Go Home</a></button>
     </body>
 </html>

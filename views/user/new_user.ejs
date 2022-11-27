@@ -15,12 +15,28 @@
             body {
               background-color: rgb(246, 216, 246);
             }
+    
+            body {
+            margin: 50px 100px;
+            }
+            .row {
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            width: 20%;
+            }
+            h1{
+            margin: center;
+            text-align: center;
+            font-size: 35px;
+            }
+
           </style>
     </head>
     <body>
        
-        <h1>new user</h1>
-        <form action="/user" method="POST">
+        <h1>Welcome to the First Step to Better Sleep</h1>
+        <form class="row" action="/user" method="POST">
             <label for="First_name">First Name</label>
             <input type="text" name="First_name" id="First_name">
             <label for="Last_name">Last Name</label>

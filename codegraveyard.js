@@ -29,3 +29,20 @@ const sleepSchema = new mongoose.Schema({
     password: { type: String, required: true },
     sleep: [Sleep.schema]
 });
+
+sleepRouter.get("/", (req, res) => {
+   if(req.session.currentUser) {
+   User.findById(req.session.currentUser,(err, foundUser) => {
+   res.render("sleep/dashboard.ejs", {
+       sleep: foundUser.sleeps,
+       currentUser: foundUser,
+       user: foundUser,
+   });
+   });
+   } else {
+       res.render("sleep/index.ejs", {
+           currentUser: req.session.currentUser,
+           });
+       } 
+   });
+
